@@ -58,11 +58,12 @@ int c=0;
                     int d=0;
                     for(Data data: list)
                     {
-                        if (id1 == data.getId())
+                        if (id1 == data.getId()) {
                             System.out.println(data.getName());
-                        d++;
+                            d++;
+                        }
                     }
-                    if(d==0)
+                    if(d==0 )
                         System.out.println("id does not exist");
                     break;
             }

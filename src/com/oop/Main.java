@@ -25,8 +25,10 @@ int c=0;
                        {
                            if (id == data.getId())
                                data.setName(name);
+                           else
+                               list.add(new Data(name,id));
                        }
-                       list.add(new Data(name,id));
+
                        System.out.println(id+" "+name);
                    }
                    else

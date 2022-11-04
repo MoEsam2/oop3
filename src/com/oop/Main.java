@@ -19,37 +19,51 @@ int c=0;
                 case 1:
                    int id= in.nextInt();
                     String name=in.nextLine();
+                    int k=0;
                    if( id!=-1)
                    {
                        for(Data data: list)
                        {
-                           if (id == data.getId())
+                           if (id == data.getId()) {
                                data.setName(name);
-                           else
-                               list.add(new Data(name,id));
+                               k++;
+                           }
                        }
-
-                       System.out.println(id+" "+name);
+                       if (k==0) {
+                           list.add(new Data(name, id));
+                           k=0;
+                       }
                    }
                    else
                    {
                        id=c++;
+                       for(Data data: list)
+                       {
+                           if (id == data.getId()) {
+                               data.setName(name);
+                               k++;
+                           }
+                       }
+                       if (k==0) {
+                           list.add(new Data(name, id));
+                           k=0;
+                       }
 
-                       list.add(new Data(name,id));
-                       System.out.println(id+" "+name);
                    }
 
                    break;
                 case 2 :
                     System.out.println("Enter the id : ");
                     int id1=in.nextInt();
+                    int d=0;
                     for(Data data: list)
                     {
                         if (id1 == data.getId())
                             System.out.println(data.getName());
-                        else
-                            System.out.println("id does not exist");
+                        d++;
                     }
+                    if(d==0)
+                        System.out.println("id does not exist");
                     break;
             }
 
